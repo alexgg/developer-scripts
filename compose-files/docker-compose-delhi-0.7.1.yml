@@ -22,7 +22,6 @@ volumes:
   log-data:
   consul-config:
   consul-data:
-  portainer_data:
 
 services:
   volume:
@@ -392,17 +391,6 @@ services:
 #################################################################
 # Tooling
 #################################################################
-
-  portainer:
-    image:  portainer/portainer
-    ports:
-      - "9000:9000"
-    command: -H unix:///var/run/docker.sock
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - portainer_data:/data
-    depends_on:
-      - volume  
 
 networks:
   edgex-network:
