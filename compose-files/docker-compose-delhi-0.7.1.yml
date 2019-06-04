@@ -42,8 +42,6 @@ services:
       - "8600:8600"
     networks:
       edgex-network:
-        aliases:
-            - edgex-core-consul
     volumes:
       - db-data:/data/db
       - log-data:/edgex/logs
@@ -56,8 +54,6 @@ services:
     image: edgexfoundry/docker-core-config-seed-go:0.7.1
     networks:
       edgex-network:
-        aliases:
-            - edgex-core-config-seed
     volumes:
       - db-data:/data/db
       - log-data:/edgex/logs
@@ -371,8 +367,4 @@ services:
 #################################################################
 # Tooling
 #################################################################
-
-networks:
-  edgex-network:
-    driver: "bridge"
 ...
