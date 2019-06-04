@@ -26,8 +26,6 @@ volumes:
 services:
   volume:
     image: edgexfoundry/docker-edgex-volume:0.6.0
-    networks:
-      - edgex-network
     volumes:
       - db-data:/data/db
       - log-data:/edgex/logs
@@ -40,8 +38,6 @@ services:
       - "8400:8400"
       - "8500:8500"
       - "8600:8600"
-    networks:
-      edgex-network:
     volumes:
       - db-data:/data/db
       - log-data:/edgex/logs
@@ -52,8 +48,6 @@ services:
 
   edgex-core-config-seed:
     image: edgexfoundry/docker-core-config-seed-go:0.7.1
-    networks:
-      edgex-network:
     volumes:
       - db-data:/data/db
       - log-data:/edgex/logs
@@ -67,8 +61,6 @@ services:
     image: edgexfoundry/docker-edgex-mongo:0.6.0
     ports:
       - "27017:27017"
-    networks:
-      - edgex-network
     volumes:
       - db-data:/data/db
       - log-data:/edgex/logs
@@ -81,8 +73,6 @@ services:
     image: edgexfoundry/docker-support-logging-go:0.7.1
     ports:
       - "48061:48061"
-    networks:
-      - edgex-network
     volumes:
       - db-data:/data/db
       - log-data:/edgex/logs
@@ -97,8 +87,6 @@ services:
     image: edgexfoundry/docker-support-notifications-go:0.7.1
     ports:
       - "48060:48060"
-    networks:
-      - edgex-network
     volumes:
       - db-data:/data/db
       - log-data:/edgex/logs
@@ -111,8 +99,6 @@ services:
     image: edgexfoundry/docker-core-metadata-go:0.7.1
     ports:
       - "48081:48081"
-    networks:
-      - edgex-network
     volumes:
       - db-data:/data/db
       - log-data:/edgex/logs
@@ -126,8 +112,6 @@ services:
     ports:
       - "48080:48080"
       - "5563:5563"
-    networks:
-      - edgex-network
     volumes:
       - db-data:/data/db
       - log-data:/edgex/logs
@@ -140,8 +124,6 @@ services:
     image: edgexfoundry/docker-core-command-go:0.7.1
     ports:
       - "48082:48082"
-    networks:
-      - edgex-network
     volumes:
       - db-data:/data/db
       - log-data:/edgex/logs
@@ -154,8 +136,6 @@ services:
     image: edgexfoundry/docker-support-scheduler-go:0.7.1
     ports:
       - "48085:48085"
-    networks:
-      - edgex-network
     volumes:
       - db-data:/data/db
       - log-data:/edgex/logs
@@ -168,8 +148,6 @@ services:
     image: edgexfoundry/docker-export-client-go:0.7.1
     ports:
       - "48071:48071"
-    networks:
-      - edgex-network
     volumes:
       - db-data:/data/db
       - log-data:/edgex/logs
@@ -187,8 +165,6 @@ services:
     ports:
       - "48070:48070"
       - "5566:5566"
-    networks:
-      - edgex-network
     volumes:
       - db-data:/data/db
       - log-data:/edgex/logs
@@ -207,8 +183,6 @@ services:
     image: edgexfoundry/docker-support-rulesengine:0.7.0
     ports:
       - "48075:48075"
-    networks:
-      - edgex-network
     volumes:
       - db-data:/data/db
       - log-data:/edgex/logs
@@ -223,8 +197,6 @@ services:
     image: edgexfoundry/docker-device-virtual:0.6.0
     ports:
       - "49990:49990"
-    networks:
-      - edgex-network
     volumes:
       - db-data:/data/db
       - log-data:/edgex/logs
